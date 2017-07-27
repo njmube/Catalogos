@@ -9,6 +9,7 @@ public class RegimenFiscalToRegimenFiscalDTO extends PropertyMap<RegimenFiscal, 
 	@Override
 	protected void configure() {
 		map().setVigente(source.vigente());
+		map().setFisica(source.isFisico());
 	}
 
 }

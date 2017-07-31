@@ -1,0 +1,23 @@
+INSERT INTO `forma_pago` (`clave_sat`, `descripcion`, `fecha_inicial`, `bancarizado`, `numero_operacion`, `ordenante_rfc`, `ordenante_cuenta`, `ordenante_patron`, `beneficiario_rfc`, `beneficiario_cuenta`, `beneficiario_patron`, `tipo_cadena_pago`, `banco_emisor` ) VALUES
+('01', 'Efectivo','2017-01-01', 0,2, 0, 0, 'NO', 0, 0, 'NO', 0, 'NO'),
+('02', 'Cheque nominativo','2017-01-01', 1,2, 2, 2, '[0-9]{11}|[0-9]{18}', 2, 2, '[0-9]{10,11}|[0-9]{15,16}|[0-9]{18}|[A-Z0-9_]{10,50}', 0, 'SI EL RFC DEL EMISOR DE LA CUENTA ORDENANTE ES XEXX010101000, ESTE CAMPO ES OBLIGATORIO.'),
+('03', 'Transferencia electrónica de fondos','2017-01-01', 1,2, 2, 2, '[0-9]{10}|[0-9]{16}|[0-9]{18}', 2, 2, '[0-9]{10}|[0-9]{18}', 2, 'SI EL RFC DEL EMISOR DE LA CUENTA ORDENANTE ES XEXX010101000, ESTE CAMPO ES OBLIGATORIO.'),
+('04', 'Tarjeta de crédito','2017-01-01', 1,2, 2, 2, '[0-9]{16}', 2, 2, '[0-9]{10,11}|[0-9]{15,16}|[0-9]{18}|[A-Z0-9_]{10,50}', 0, 'SI EL RFC DEL EMISOR DE LA CUENTA ORDENANTE ES XEXX010101000, ESTE CAMPO ES OBLIGATORIO.'),
+('05', 'Monedero electrónico','2017-01-01', 1,2, 2, 2, '[0-9]{10,11}|[0-9]{15,16}|[0-9]{18}|[A-Z0-9_]{10,50}', 2, 2, '[0-9]{10,11}|[0-9]{15,16}|[0-9]{18}|[A-Z0-9_]{10,50}', 0, 'NO'),
+('06', 'Dinero electrónico','2017-01-01', 1,2, 2, 2, '[0-9]{10}', 0, 0, 'NO', 0, 'NO'),
+('08', 'Vales de despensa','2017-01-01', 0,2, 0, 0, 'NO', 0, 0, 'NO', 0, 'NO'),
+('12', 'Dación en pago','2017-01-01', 0,2, 0, 0, 'NO', 0, 0, 'NO', 0, 'NO'),
+('13', 'Pago por subrogación','2017-01-01', 0,2, 0, 0, 'NO', 0, 0, 'NO', 0, 'NO'),
+('14', 'Pago por consignación','2017-01-01', 0,2, 0, 0, 'NO', 0, 0, 'NO', 0, 'NO'),
+('15', 'Condonación','2017-01-01', 0,2, 0, 0, 'NO', 0, 0, 'NO', 0, 'NO'),
+('17', 'Compensación','2017-01-01', 0,2, 0, 0, 'NO', 0, 0, 'NO', 0, 'NO'),
+('23', 'Novación','2017-01-01', 0,2, 0, 0, 'NO', 0, 0, 'NO', 0, 'NO'),
+('24', 'Confusión','2017-01-01', 0,2, 0, 0, 'NO', 0, 0, 'NO', 0, 'NO'),
+('25', 'Remisión de deuda','2017-01-01', 0,2, 0, 0, 'NO', 0, 0, 'NO', 0, 'NO'),
+('26', 'Prescripción o caducidad','2017-01-01', 0,2, 0, 0, 'NO', 0, 0, 'NO', 0, 'NO'),
+('27', 'A satisfacción del acreedor','2017-01-01', 0,2, 0, 0, 'NO', 0, 0, 'NO', 0, 'NO'),
+('28', 'Tarjeta de débito','2017-01-01', 1,2, 2, 2, '[0-9]{16}', 2, 2, '[0-9]{10,11}|[0-9]{15,16}|[0-9]{18}|[A-Z0-9_]{10,50}', 0, 'SI EL RFC DEL EMISOR DE LA CUENTA ORDENANTE ES XEXX010101000, ESTE CAMPO ES OBLIGATORIO.'),
+('29', 'Tarjeta de servicios','2017-01-01', 1,2, 2, 2, '[0-9]{15,16}', 2, 2, '[0-9]{10,11}|[0-9]{15,16}|[0-9]{18}|[A-Z0-9_]{10,50}', 0, 'SI EL RFC DEL EMISOR DE LA CUENTA ORDENANTE ES XEXX010101000, ESTE CAMPO ES OBLIGATORIO.'),
+('30', 'Aplicación de anticipos','2017-07-27', 0,2, 0, 0, 'NO', 0, 0, 'NO', 0, 'NO'),
+('99', 'Por definir','2017-01-01', 2,2, 2, 2, 'OPCIONAL', 2, 2, 'OPCIONAL', 2, 'OPCIONAL');
+

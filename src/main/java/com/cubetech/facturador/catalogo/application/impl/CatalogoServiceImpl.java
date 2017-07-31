@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import org.modelmapper.MappingException;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.ValidationException;
 import org.slf4j.Logger;
@@ -75,7 +76,11 @@ public abstract class CatalogoServiceImpl<TEntity extends Catalogo, TModel> impl
 	private List<TModel> convirte(List<TEntity> lista){
 		List<TModel> ret = new ArrayList<>();
 		for(TEntity temp : lista){
+			try{
 			ret.add(modelMapper.map(temp, modelClass));
+			}catch(MappingException e){
+				logger.error("Mapeo", e);
+			}
 		}
 		try{
 			modelMapper.validate();

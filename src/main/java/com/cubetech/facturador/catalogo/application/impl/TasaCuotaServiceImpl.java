@@ -68,7 +68,6 @@ public class TasaCuotaServiceImpl implements TasaCuotaService {
 				ret.add(tmp);
 			}
 		}
-		
 		return ret;
 	}
 

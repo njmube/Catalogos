@@ -101,43 +101,43 @@ public class CatalogosServiceImpl implements CatalogosService<CatalogosDTO, Stri
 			
 			switch(aux.getNombre()){
 			case "regimenFiscal":
-				aux.getDatos().addAll(regimenfiscal.consultaLista((String)pair.getValue()));
+				aux.getDatos().addAll(regimenfiscal.consultaVigentes((String)pair.getValue()));
 				break;
 			case "codigoPostal":
-				aux.getDatos().addAll(codigoPostal.consultaLista((String)pair.getValue()));
+				aux.getDatos().addAll(codigoPostal.consultaVigentes((String)pair.getValue()));
 				break;
 			case "formaPago":
-				aux.getDatos().addAll(formaPago.consultaLista((String)pair.getValue()));
+				aux.getDatos().addAll(formaPago.consultaVigentes((String)pair.getValue()));
 				break;
 			case "metodoPago":
-				aux.getDatos().addAll(metodoPago.consultaLista((String)pair.getValue()));
+				aux.getDatos().addAll(metodoPago.consultaVigentes((String)pair.getValue()));
 				break;
 			case "uso":
-				aux.getDatos().addAll(uso.consultaLista((String)pair.getValue()));
+				aux.getDatos().addAll(uso.consultaVigentes((String)pair.getValue()));
 				break;
 			case "productoServicio":
-				aux.getDatos().addAll(productoServicio.consultaLista((String)pair.getValue()));
+				aux.getDatos().addAll(productoServicio.consultaVigentes((String)pair.getValue()));
 				break;
 			case "unidad":
-				aux.getDatos().addAll(unidad.consultaLista((String)pair.getValue()));
+				aux.getDatos().addAll(unidad.consultaVigentes((String)pair.getValue()));
 				break;
 			case "impuesto":
-				aux.getDatos().addAll(impuesto.consultaLista((String)pair.getValue()));
+				aux.getDatos().addAll(impuesto.consultaVigentes((String)pair.getValue()));
 				break;
 			case "moneda":
-				aux.getDatos().addAll(moneda.consultaLista((String)pair.getValue()));
+				aux.getDatos().addAll(moneda.consultaVigentes((String)pair.getValue()));
 				break;
 			case "pais":
-				aux.getDatos().addAll(pais.consultaLista((String)pair.getValue()));
+				aux.getDatos().addAll(pais.consultaVigentes((String)pair.getValue()));
 				break;
 			case "tipoFactor":
-				aux.getDatos().addAll(tipoFactor.consultaLista((String)pair.getValue()));
+				aux.getDatos().addAll(tipoFactor.consultaVigentes((String)pair.getValue()));
 				break;
 			case "tipoRelacion":
-				aux.getDatos().addAll(tipoRelacion.consultaLista((String)pair.getValue()));
+				aux.getDatos().addAll(tipoRelacion.consultaVigentes((String)pair.getValue()));
 				break;
 			case "tipoComprobante":
-				aux.getDatos().addAll(tipoComprobante.consultaLista((String)pair.getValue()));
+				aux.getDatos().addAll(tipoComprobante.consultaVigentes((String)pair.getValue()));
 				break;
 			default:
 				break;

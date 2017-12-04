@@ -4,7 +4,7 @@ NAME=catalogo
 mvn package
 docker service rm $NAME  || true
 docker rmi $IMAGEN:$VERSION || true
-docker build -t $IMAGEN:$VERSION .
+docker build -t $IMAGEN:$VERSION -f Dockerfile.dev .
 
 docker service create \
         --name $NAME \
@@ -13,6 +13,6 @@ docker service create \
         --replicas=1  \
         --restart-delay 5s \
         --update-delay 10s \
+        -p 57777:57777  \
         --update-parallelism 1 \
-        --mount type=bind,source=/etc/localtime,destination=/etc/localtime \
         $IMAGEN:$VERSION

@@ -54,10 +54,10 @@ public class Vigencia implements ValueObject<Vigencia> {
 		boolean ret = false;
 
 		if (this.fechaInicial != null)
-			ret = this.fechaInicial.before(fecha);
+			ret = this.fechaInicial.compareTo(fecha) <= 0;
 
 		if (fechaFinal != null)
-			ret = ret && this.fechaFinal.after(fecha);
+			ret = ret && this.fechaFinal.compareTo(fecha) >= 0;
 
 		return ret;
 	}

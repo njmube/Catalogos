@@ -2,6 +2,7 @@ package com.cubetech.facturador.catalogo.application.impl;
 
 import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -41,6 +42,19 @@ public abstract class CatalogoServiceImpl<TEntity extends Catalogo, TModel> impl
 		
 		for(TEntity temp : lista){
 			if(temp.vigente()){
+				ret.add(temp);
+			}
+		}
+		lista.removeAll(ret);
+		
+		return ret;
+	}
+	private List<TEntity> filtraVigentes(List<TEntity> lista, Date fecha){
+		
+		List<TEntity> ret = new ArrayList<>();
+		
+		for(TEntity temp : lista){
+			if(temp.vigente(fecha)){
 				ret.add(temp);
 			}
 		}
@@ -101,6 +115,12 @@ public abstract class CatalogoServiceImpl<TEntity extends Catalogo, TModel> impl
 	@Override
 	public List<TModel> consultaVigentes(String clave) {
 		List<TEntity> listEntity = this.filtraVigentes(this.consultaClave(clave)); 	
+		return this.convirte(listEntity);
+	}
+	
+	@Override
+	public List<TModel> consultaVigentes(String clave, Date fecha) {
+		List<TEntity> listEntity = this.filtraVigentes(this.consultaClave(clave), fecha); 	
 		return this.convirte(listEntity);
 	}
 

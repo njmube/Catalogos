@@ -1,5 +1,7 @@
 package com.cubetech.facturador.catalogo.domain.base;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -33,6 +35,9 @@ public abstract class Catalogo{
 	}
 	public boolean vigente(){
 		return vigencia.vigente();
+	}
+	public boolean vigente(Date fecha){
+		return vigencia.vigenteEn(fecha);
 	}
 	public String toString(){
 		String ret= "";
